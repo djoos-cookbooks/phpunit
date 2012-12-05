@@ -6,8 +6,8 @@
 #
 
 case node[:phpunit][:install_method]
-	when :pear
+	when "pear"
 		include_recipe "phpunit::pear"
-	when :composer
+	when "composer"
 		include_recipe "phpunit::composer"
 end

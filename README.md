@@ -22,8 +22,8 @@ Requirements
 Attributes
 ==========
 
-* `node['phpunit']['install_method']` - Installation method, ':pear' or ':composer', defaults to ':pear'
-* `node['phpunit']['version']` - The PHPUnit version that will be installed, defaults to 'latest'
+* `node['phpunit']['install_method']` - Installation method, "pear" or "composer", defaults to "pear"
+* `node['phpunit']['version']` - The PHPUnit version that will be installed, defaults to "latest"
 * `node['phpunit']['prefix']` - The composer.json bin-dir, defaults to "/usr/bin" (composer install method only)
 
 Usage

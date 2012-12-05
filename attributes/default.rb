@@ -5,7 +5,7 @@
 # Copyright 2012, Escape Studios
 #
 
-default[:phpunit][:install_method] = :pear
+default[:phpunit][:install_method] = "pear"
 default[:phpunit][:version] = "latest"
 
 #composer install only
