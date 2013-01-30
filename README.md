@@ -1,7 +1,7 @@
 Description
 ===========
 
-This cookbook provides an easy way to install phpunit.
+This cookbook provides an easy way to install PHPUnit.
 
 More information?
 http://www.phpunit.de
