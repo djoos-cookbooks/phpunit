@@ -13,7 +13,7 @@ php_pear_channel "pear.php.net" do
 end
 
 #upgrade PEAR
-php_pear "pear" do
+php_pear "PEAR" do
 	action :upgrade
 end
 
@@ -28,7 +28,7 @@ pearhub_chan = php_pear_channel "pear.phpunit.de" do
 end
 
 #upgrade PHPUnit
-php_pear "phpunit" do
+php_pear "PHPUnit" do
 	channel pearhub_chan.channel_name
 	if node[:phpunit][:version] != "latest"
 		version "#{node[:phpunit][:version]}"
