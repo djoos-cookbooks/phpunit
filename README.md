@@ -18,6 +18,11 @@ Requirements
 
 * Ubuntu
 * Debian
+* RHEL
+* CentOS
+* Fedora
+* Scientific
+* Amazon
 
 Attributes
 ==========
