@@ -8,16 +8,17 @@
 include_recipe "php"
 
 #PHP Extension and Application Repository PEAR channel
-php_pear_channel "pear.php.net" do
+pearhub_chan = php_pear_channel "pear.php.net" do
   action :update
 end
 
 #upgrade PEAR
 php_pear "PEAR" do
+	channel pearhub_chan.channel_name
 	action :upgrade
 end
 
-#a component that PHPUnit depends upon is hosted on the Symfony2 PEAR channel
+#Symfony2 PEAR channel
 php_pear_channel "pear.symfony.com" do
     action :discover
 end
