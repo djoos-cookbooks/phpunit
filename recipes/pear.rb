@@ -2,7 +2,7 @@
 # Cookbook Name:: phpunit
 # Recipe:: pear
 #
-# Copyright 2012, Escape Studios
+# Copyright 2012-2013, Escape Studios
 #
 
 include_recipe "php"
@@ -14,8 +14,8 @@ end
 
 #upgrade PEAR
 php_pear "PEAR" do
-	channel pearhub_chan.channel_name
-	action :upgrade
+    channel pearhub_chan.channel_name
+    action :upgrade
 end
 
 #Symfony2 PEAR channel
@@ -25,14 +25,14 @@ end
 
 #PHPUnit PEAR channel
 pearhub_chan = php_pear_channel "pear.phpunit.de" do
-	action :discover
+    action :discover
 end
 
 #upgrade PHPUnit
 php_pear "PHPUnit" do
-	channel pearhub_chan.channel_name
-	if node[:phpunit][:version] != "latest"
-		version "#{node[:phpunit][:version]}"
-	end
-	action :upgrade
+    channel pearhub_chan.channel_name
+    if node[:phpunit][:version] != "latest"
+        version "#{node[:phpunit][:version]}"
+    end
+    action :upgrade
 end

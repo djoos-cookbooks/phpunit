@@ -27,7 +27,7 @@ Requirements
 Attributes
 ==========
 
-* `node['phpunit']['install_method']` - Installation method, "pear" or "composer", defaults to "pear"
+* `node['phpunit']['install_method']` - Installation method, "pear", "composer" or "phar", defaults to "pear"
 * `node['phpunit']['version']` - The PHPUnit version that will be installed, defaults to "latest"
 * `node['phpunit']['prefix']` - The composer.json bin-dir, defaults to "/usr/bin" (composer install method only)
 
@@ -36,9 +36,9 @@ Usage
 
 1) include `recipe[phpunit]` in a run list
 2)
-	change the attributes
-	--- OR ---
-	override the attribute on a higher level (http://wiki.opscode.com/display/chef/Attributes#Attributes-AttributesPrecedence)
+    change the attributes
+    --- OR ---
+    override the attribute on a higher level (http://wiki.opscode.com/display/chef/Attributes#Attributes-AttributesPrecedence)
 
 References
 ==========
@@ -50,7 +50,7 @@ License and Authors
 
 Author: David Joos <david@escapestudios.com>
 Author: Escape Studios Development <dev@escapestudios.com>
-Copyright: 2012, Escape Studios
+Copyright: 2012-2013, Escape Studios
 
 Unless otherwise noted, all files are released under the MIT license,
 possible exceptions will contain licensing information in them.
