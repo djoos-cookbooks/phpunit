@@ -34,5 +34,5 @@ php_pear "PHPUnit" do
     if node[:phpunit][:version] != "latest"
         version "#{node[:phpunit][:version]}"
     end
-    action :upgrade if node['phpunit']['version'] == "latest"
+    action :upgrade if node[:phpunit][:version] == "latest"
 end
