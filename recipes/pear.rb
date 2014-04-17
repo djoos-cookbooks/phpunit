@@ -28,11 +28,14 @@ pearhub_chan = php_pear_channel "pear.phpunit.de" do
     action :discover
 end
 
-#upgrade PHPUnit
-php_pear "PHPUnit" do
+#install/upgrade PHPUnit
+package = "PHPUnit"
+
+php_pear package do
     channel pearhub_chan.channel_name
     if node[:phpunit][:version] != "latest"
         version "#{node[:phpunit][:version]}"
     end
-    action :upgrade if node[:phpunit][:version] == "latest"
+    #upgrade when package is installed and latest version is required
+    action ( !(`pear list | grep #{package}`.empty?) and node[:phpunit][:version] == "latest" ) ? :upgrade : :install
 end
