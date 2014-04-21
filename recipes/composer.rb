@@ -2,43 +2,43 @@
 # Cookbook Name:: phpunit
 # Recipe:: composer
 #
-# Copyright 2012-2013, Escape Studios
+# Copyright 2012-2014, Escape Studios
 #
 
-include_recipe "composer"
+include_recipe 'composer'
 
 phpunit_dir = "#{Chef::Config[:file_cache_path]}/phpunit"
 
-directory "#{phpunit_dir}" do
-    owner "root"
-    group "root"
-    mode "0755"
-    action :create
+directory phpunit_dir do
+  owner 'root'
+  group 'root'
+  mode 0755
+  action :create
 end
 
-#figure out what version to install
-if node[:phpunit][:version] != "latest"
-    version = node[:phpunit][:version]
+# figure out what version to install
+if node[:phpunit][:version] != 'latest'
+  version = node[:phpunit][:version]
 else
-    version = "*.*.*"
+  version = '*.*.*'
 end
 
-#composer.json
+# composer.json
 template "#{phpunit_dir}/composer.json" do
-    source "composer.json.erb"
-    owner "root"
-    group "root"
-    mode 0600
-    variables(
-        :version => version,
-        :bindir => node[:phpunit][:prefix]
-    )
+  source 'composer.json.erb'
+  owner 'root'
+  group 'root'
+  mode 0600
+  variables(
+    :version => version,
+    :bindir => node[:phpunit][:prefix]
+  )
 end
 
-#composer update
-execute "phpunit-composer" do
-    user "root"
-    cwd phpunit_dir
-    command "composer update"
-    action :run
+# composer update
+execute 'phpunit-composer' do
+  user 'root'
+  cwd phpunit_dir
+  command 'composer update'
+  action :run
 end

@@ -2,7 +2,7 @@
 # Cookbook Name:: phpunit
 # Attributes:: composer
 #
-# Copyright 2012-2013, Escape Studios
+# Copyright 2012-2014, Escape Studios
 #
 
-default[:phpunit][:prefix] = "/usr/bin"
+default[:phpunit][:prefix] = '/usr/bin'
