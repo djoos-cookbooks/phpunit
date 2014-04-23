@@ -10,6 +10,7 @@ version '1.0.0'
   supports os
 end
 
+depends 'apt'
 depends 'php'
 depends 'composer'
 
