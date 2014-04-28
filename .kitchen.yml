@@ -16,7 +16,5 @@ platforms:
 suites:
   - name: default
     run_list:
+      - recipe[apt::default]
       - recipe[phpunit::default]
-    attributes:
-      phpunit:
-        install_method: composer
