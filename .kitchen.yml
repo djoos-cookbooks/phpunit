@@ -20,3 +20,9 @@ suites:
     attributes:
       phpunit:
         install_method: composer
+  - name: phar
+    run_list:
+      - recipe[phpunit::default]
+    attributes:
+      phpunit:
+        install_method: phar

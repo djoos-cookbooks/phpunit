@@ -6,4 +6,4 @@
 #
 
 default[:phpunit][:phar_url] = 'https://phar.phpunit.de/phpunit.phar'
-default[:phpunit][:install_dir] = ''
+default[:phpunit][:install_dir] = '/usr/bin'
