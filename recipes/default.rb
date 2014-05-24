@@ -5,7 +5,7 @@
 # Copyright 2012-2014, Escape Studios
 #
 
-case node[:phpunit][:install_method]
+case node['phpunit']['install_method']
 when 'pear'
   include_recipe 'phpunit::pear'
 when 'composer'

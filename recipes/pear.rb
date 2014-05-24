@@ -32,7 +32,7 @@ end
 package = 'PHPUnit'
 
 # upgrade when package is installed and latest version is required
-if !(`pear list | grep #{package}`.empty?) && node[:phpunit][:version] == 'latest'
+if !(`pear list | grep #{package}`.empty?) && node['phpunit']['version'] == 'latest'
   action = :upgrade
 else
   action = :install
@@ -40,6 +40,6 @@ end
 
 php_pear package do
   channel pearhub_chan.channel_name
-  version node[:phpunit][:version] if node[:phpunit][:version] != 'latest'
+  version node['phpunit']['version'] if node['phpunit']['version'] != 'latest'
   action action
 end

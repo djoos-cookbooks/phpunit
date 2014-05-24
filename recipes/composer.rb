@@ -17,8 +17,8 @@ directory phpunit_dir do
 end
 
 # figure out what version to install
-if node[:phpunit][:version] != 'latest'
-  version = node[:phpunit][:version]
+if node['phpunit']['version'] != 'latest'
+  version = node['phpunit']['version']
 else
   version = '*.*.*'
 end
@@ -31,7 +31,7 @@ template "#{phpunit_dir}/composer.json" do
   mode 0600
   variables(
     :version => version,
-    :bindir => node[:phpunit][:prefix]
+    :bindir => node['phpunit']['prefix']
   )
 end
 
