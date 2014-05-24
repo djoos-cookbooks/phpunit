@@ -11,6 +11,7 @@ version '1.0.2'
 end
 
 depends 'php'
+depends 'git'
 depends 'composer'
 
 recipe 'phpunit', 'Installs phpunit.'
