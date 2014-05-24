@@ -5,6 +5,7 @@
 # Copyright 2012-2014, Escape Studios
 #
 
+include_recipe 'git'
 include_recipe 'composer'
 
 phpunit_dir = "#{Chef::Config[:file_cache_path]}/phpunit"
