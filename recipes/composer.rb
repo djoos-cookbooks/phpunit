@@ -10,6 +10,14 @@ include_recipe 'composer'
 
 phpunit_dir = "#{Chef::Config[:file_cache_path]}/phpunit"
 
+# Before creating the dir, first delete the old directory where the composer files
+# are stores. This because the Chef cache can be persistent, which causes Composer
+# to not install the executable, even if "bin-dir" is set.
+directory phpunit_dir do
+    recursive true
+    action :delete
+end
+
 directory phpunit_dir do
   owner 'root'
   group 'root'
@@ -36,10 +44,10 @@ template "#{phpunit_dir}/composer.json" do
   )
 end
 
-# composer update
+# composer install
 execute 'phpunit-composer' do
   user 'root'
   cwd phpunit_dir
-  command 'composer update'
+  command 'composer install'
   action :run
 end
