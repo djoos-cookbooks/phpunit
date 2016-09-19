@@ -4,7 +4,7 @@ describe 'phpunit::default' do
   let(:install_method) { 'composer' }
 
   let(:chef_run) do
-    ChefSpec::Runner.new do |node|
+    ChefSpec::SoloRunner.new do |node|
       node.set[:phpunit][:install_method] = install_method
     end.converge(described_recipe)
   end

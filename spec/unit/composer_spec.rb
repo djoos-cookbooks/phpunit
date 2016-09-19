@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'phpunit::composer' do
-  let(:chef_run) { ChefSpec::Runner.new.converge(described_recipe) }
+  let(:chef_run) { ChefSpec::SoloRunner.new.converge(described_recipe) }
   let(:phpunit_dir) { "#{Chef::Config[:file_cache_path]}/phpunit" }
 
   before do

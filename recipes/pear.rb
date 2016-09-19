@@ -2,7 +2,7 @@
 # Cookbook Name:: phpunit
 # Recipe:: pear
 #
-# Copyright 2012-2014, Escape Studios
+# Copyright (c) 2016, David Joos
 #
 
 include_recipe 'php'
@@ -32,11 +32,11 @@ end
 package = 'PHPUnit'
 
 # upgrade when package is installed and latest version is required
-if !(`pear list | grep #{package}`.empty?) && node['phpunit']['version'] == 'latest'
-  action = :upgrade
-else
-  action = :install
-end
+action = if !`pear list | grep #{package}`.empty? && node['phpunit']['version'] == 'latest'
+           :upgrade
+         else
+           :install
+         end
 
 php_pear package do
   channel pearhub_chan.channel_name
