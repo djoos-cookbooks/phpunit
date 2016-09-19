@@ -19,12 +19,6 @@ platforms:
       - recipe[apt]
 
 suites:
-  - name: default_pear
-    run_list:
-      - recipe[phpunit::default]
-    attributes:
-      phpunit:
-        install_method: pear
   - name: default_composer
     run_list:
       - recipe[phpunit::default]
