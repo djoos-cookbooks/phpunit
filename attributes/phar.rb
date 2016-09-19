@@ -2,7 +2,7 @@
 # Cookbook Name:: phpunit
 # Attributes:: phar
 #
-# Copyright 2012-2014, Escape Studios
+# Copyright (c) 2016, David Joos
 #
 
 default['phpunit']['phar_url'] = 'https://phar.phpunit.de/phpunit.phar'

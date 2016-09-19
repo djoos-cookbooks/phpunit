@@ -4,7 +4,7 @@ describe 'phpunit::phar' do
   let(:install_dir) { '/tmp' }
 
   let(:chef_run) do
-    ChefSpec::Runner.new do |node|
+    ChefSpec::SoloRunner.new do |node|
       node.set[:phpunit][:install_dir] = install_dir
     end.converge(described_recipe)
   end

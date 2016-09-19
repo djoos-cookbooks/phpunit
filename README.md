@@ -1,4 +1,4 @@
-[![Build Status](https://secure.travis-ci.org/escapestudios-cookbooks/phpunit.png)](http://travis-ci.org/escapestudios-cookbooks/phpunit)
+[![Build Status](https://secure.travis-ci.org/djoos-cookbooks/phpunit.png)](http://travis-ci.org/djoos-cookbooks/phpunit)
 
 Description
 ===========
@@ -50,9 +50,12 @@ References
 License and Authors
 ===================
 
+Author: David Joos <development@davidjoos.com>
+Copyright: 2016, David Joos
+
 Author: David Joos <david.joos@escapestudios.com>
 Author: Escape Studios Development <dev@escapestudios.com>
-Copyright: 2012-2014, Escape Studios
+Copyright: 2012-2015, Escape Studios
 
 Unless otherwise noted, all files are released under the MIT license,
 possible exceptions will contain licensing information in them.

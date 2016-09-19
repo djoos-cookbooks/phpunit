@@ -1,26 +1,37 @@
 ---
-driver_plugin: vagrant
-driver_config:
-  require_chef_omnibus: true
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+  solo_rb:
+    ssl_verify_mode: verify_peer
 
 platforms:
-# - name: ubuntu-12.04
-# driver_config:
-# box: opscode-ubuntu-12.04
-# box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_provisionerless.box
-  - name: ubuntu-13.04
-    driver_config:
-      box: opscode-ubuntu-13.04
-      box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-13.04_provisionerless.box
+  - name: ubuntu-12.04
+    run_list:
+      - recipe[apt]
+  - name: ubuntu-14.04
+    run_list:
+      - recipe[apt]
+  - name: ubuntu-16.04
+    run_list:
+      - recipe[apt]
 
 suites:
-  - name: default
+  - name: default_pear
+    run_list:
+      - recipe[phpunit::default]
+    attributes:
+      phpunit:
+        install_method: pear
+  - name: default_composer
     run_list:
       - recipe[phpunit::default]
     attributes:
       phpunit:
         install_method: composer
-  - name: phar
+  - name: default_phar
     run_list:
       - recipe[phpunit::default]
     attributes:

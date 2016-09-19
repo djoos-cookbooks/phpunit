@@ -2,7 +2,7 @@
 # Cookbook Name:: phpunit
 # Recipe:: composer
 #
-# Copyright 2012-2014, Escape Studios
+# Copyright (c) 2016, David Joos
 #
 
 include_recipe 'git'
@@ -18,11 +18,11 @@ directory phpunit_dir do
 end
 
 # figure out what version to install
-if node['phpunit']['version'] != 'latest'
-  version = node['phpunit']['version']
-else
-  version = '*.*.*'
-end
+version = if node['phpunit']['version'] != 'latest'
+            node['phpunit']['version']
+          else
+            '*.*.*'
+          end
 
 # composer.json
 template "#{phpunit_dir}/composer.json" do
