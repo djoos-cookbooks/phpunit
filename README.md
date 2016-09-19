@@ -1,15 +1,13 @@
 [![Build Status](https://secure.travis-ci.org/djoos-cookbooks/phpunit.png)](http://travis-ci.org/djoos-cookbooks/phpunit)
 
-Description
-===========
+# Description
 
 This cookbook provides an easy way to install PHPUnit.
 
 More information?
 http://www.phpunit.de
 
-Requirements
-============
+# Requirements
 
 ## Cookbooks:
 
@@ -26,29 +24,27 @@ Requirements
 * Scientific
 * Amazon
 
-Attributes
-==========
+# Attributes
 
 * `node['phpunit']['install_method']` - Installation method, "pear", "composer" or "phar", defaults to "composer"
 * `node['phpunit']['version']` - The PHPUnit version that will be installed, defaults to "latest"
 * `node['phpunit']['prefix']` - The composer.json bin-dir, defaults to "/usr/bin" (composer install method only)
 
-Usage
-=====
+# Usage
 
 1) include `recipe[phpunit]` in a run list
-2)
-    change the attributes
-    --- OR ---
-    override the attribute on a higher level (http://wiki.opscode.com/display/chef/Attributes#Attributes-AttributesPrecedence)
+2) change the attributes
+--- OR ---
+[override the attribute on a higher level](http://wiki.opscode.com/display/chef/Attributes#Attributes-AttributesPrecedence)
 
-References
-==========
+# References
 
 * [PHPUnit home page] (http://www.phpunit.de)
 
-License and Authors
-===================
+# License and Authors
+
+Author: David Joos <development@davidjoos.com>
+Copyright: 2016, David Joos
 
 Author: David Joos <development@davidjoos.com>
 Copyright: 2016, David Joos
