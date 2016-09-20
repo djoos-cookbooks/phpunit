@@ -4,7 +4,7 @@ maintainer_email 'development@davidjoos.com'
 license 'MIT'
 description 'Installs/Configures PHPUnit'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '1.0.2'
+version '1.1.0'
 
 %w(debian ubuntu redhat centos fedora scientific amazon).each do |os|
   supports os
