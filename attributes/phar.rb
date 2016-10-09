@@ -5,5 +5,5 @@
 # Copyright (c) 2016, David Joos
 #
 
-default['phpunit']['phar_url'] = 'https://phar.phpunit.de/phpunit.phar'
+default['phpunit']['phar_url'] = 'https://phar.phpunit.de'
 default['phpunit']['install_dir'] = '/usr/bin'
