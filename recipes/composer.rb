@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: phpunit
+# Cookbook:: phpunit
 # Recipe:: composer
 #
-# Copyright (c) 2016, David Joos
+# Copyright:: (c) 2016, David Joos
 #
 
 include_recipe 'git'
@@ -13,7 +13,7 @@ phpunit_dir = "#{Chef::Config[:file_cache_path]}/phpunit"
 directory phpunit_dir do
   owner 'root'
   group 'root'
-  mode 0755
+  mode '755'
   action :create
 end
 
@@ -29,10 +29,10 @@ template "#{phpunit_dir}/composer.json" do
   source 'composer.json.erb'
   owner 'root'
   group 'root'
-  mode 0600
+  mode '600'
   variables(
-    :version => version,
-    :bindir => node['phpunit']['prefix']
+    version: version,
+    bindir: node['phpunit']['prefix']
   )
 end
 

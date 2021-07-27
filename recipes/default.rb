@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: phpunit
+# Cookbook:: phpunit
 # Recipe:: default
 #
-# Copyright (c) 2016, David Joos
+# Copyright:: (c) 2016, David Joos
 #
 
 case node['phpunit']['install_method']

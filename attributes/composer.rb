@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: phpunit
+# Cookbook:: phpunit
 # Attributes:: composer
 #
-# Copyright (c) 2016, David Joos
+# Copyright:: (c) 2016, David Joos
 #
 
 default['phpunit']['prefix'] = '/usr/bin'

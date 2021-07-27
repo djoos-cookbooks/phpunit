@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: phpunit
+# Cookbook:: phpunit
 # Attributes:: default
 #
-# Copyright (c) 2016, David Joos
+# Copyright:: (c) 2016, David Joos
 #
 
 default['phpunit']['install_method'] = 'composer'
