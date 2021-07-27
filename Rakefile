@@ -162,7 +162,7 @@ end
 # this module groups useful git commands together
 module GitCommands
   def self.ensure_branch(branch = 'master')
-    raise '[GIT] You must specify a branch.' if branch.blank?
+    raise '[GIT] You must specify a branch.' if branch.empty?
 
     return if /#{branch}/ =~ GeneralCommands.run('git rev-parse --abbrev-ref HEAD', 0, 1)
     raise '[GIT] Currently working on unexpected branch'
@@ -200,15 +200,12 @@ namespace :style do
   require 'cookstyle'
   require 'rubocop/rake_task'
 
-  desc 'Run Ruby style checks (RuboCop)'
-  RuboCop::RakeTask.new(:ruby)
-
-  desc 'Run Chef style checks (FoodCritic)'
-  FoodCritic::Rake::LintTask.new(:chef)
+  desc 'Run Cookstyle checks'
+  RuboCop::RakeTask.new(:cookstyle)
 end
 
 desc 'Run all syntax/lint checks'
-task style: ['style:ruby', 'style:chef']
+task style: ['style:cookstyle']
 
 desc 'Run ChefSpec tests'
 RSpec::Core::RakeTask.new(:spec)
